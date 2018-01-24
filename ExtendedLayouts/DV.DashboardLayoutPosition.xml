@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Layout>
+  <DashboardContainer>
+    <Block>
+      <Block Width="33">
+        <!-- Стандартные папки УД Мои задания - Входящие -->
+        <FolderGroupDashboardWidget HeaderFolderId="5BF0FB94-23FA-4212-80C3-C598E9859901" ForceVirtualFolderSearch="true">
+          <!-- папка В работе -->
+          <FolderDashboardWidget FolderId="658AF190-D102-406A-9869-581405A9CBB4" ForceVirtualFolderSearch="true" />
+          <!-- папка На контроле -->
+          <FolderDashboardWidget FolderId="1B1F4BCE-B3E6-42FE-A1E5-E64AADBE8479" ForceVirtualFolderSearch="true" />
+          <!-- папка Ответственное исполнение -->
+          <FolderDashboardWidget FolderId="778646ED-2625-4CE8-9386-B0E720FA1ABE" ForceVirtualFolderSearch="true" />
+        </FolderGroupDashboardWidget>
+      </Block>
+      <Block Width="33">
+        <!-- Стандартные папки УД Мои задания - Исходящие -->
+        <FolderGroupDashboardWidget HeaderFolderId="93DEB151-EECA-4591-B0FC-94A7C5833794">
+          <!-- папка Делегировано -->
+          <FolderDashboardWidget FolderId="27A8F99F-6CD8-47AA-9E19-205C8E0039B3" />
+          <!-- папка Завершено -->
+          <FolderDashboardWidget FolderId="ECD3E0A0-7DA4-4D47-83A9-809F6137B548" />
+        </FolderGroupDashboardWidget>
+      </Block>
+      <Block Width="33">
+        <!-- Стандартные папки УД Мои документы -->
+        <FolderGroupDashboardWidget HeaderFolderId="30292A62-E596-4FE0-A901-19EE81124DC1">
+          <!-- папка Я-Автор -->
+          <FolderDashboardWidget FolderId="6B68B583-DE35-4D48-8036-8EB416C3AC80" />
+        </FolderGroupDashboardWidget>
+      </Block>
+    </Block>
+    <!-- Пустой блок -->
+    <Block CustomCssClasses="dashboard-recent-cards-ident" ></Block>
+
+    <!-- Виджет Последние карточки -->
+    <Block Name="recentCardsBlock">
+      <RecentCardsDashboardWidget Name="recentCardsWidget" header="Последние карточки" />
+    </Block>
+  </DashboardContainer>
+</Layout>

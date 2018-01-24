@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Layout>
+  <DashboardContainer>
+    <Block>
+      <Block>
+        <!-- Стандартные папки УД Мои задания - Входящие -->
+        <FolderGroupDashboardWidget HeaderFolderId="5BF0FB94-23FA-4212-80C3-C598E9859901" ForceVirtualFolderSearch="true" Color="Tasks">          
+        </FolderGroupDashboardWidget>
+      </Block>
+      <Block>
+        <!-- Стандартные папки УД Мои задания - Исходящие -->
+        <FolderGroupDashboardWidget HeaderFolderId="93DEB151-EECA-4591-B0FC-94A7C5833794" Color="Tasks">         
+        </FolderGroupDashboardWidget>
+      </Block>
+      <Block>
+        <!-- Стандартные папки УД Мои документы -->
+        <FolderGroupDashboardWidget HeaderFolderId="30292A62-E596-4FE0-A901-19EE81124DC1" Color="Documents">         
+        </FolderGroupDashboardWidget>
+      </Block>
+    </Block>
+   
+    <!-- Виджет Последние карточки -->
+    <Block Name="recentCardsBlock">
+      <RecentCardsDashboardWidget Name="recentCardsWidget" header="Последние карточки" />
+    </Block>
+  </DashboardContainer>
+</Layout>
