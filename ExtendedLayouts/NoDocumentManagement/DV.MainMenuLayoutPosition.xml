@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Layout>
+  <MainMenu Name="appMainMenu">
+
+    <!-- Сервисные кнопки в папке Главное -->
+    <RightMainMenuItemPanel >
+     
+      <!-- Кнопка для настройки дерева папок-->
+      <ConfigurableMainMenuContainerButton Name="configurationButton" />
+      <RefreshFoldersTreeButton Name="refreshFoldersTreeButton" IconClass="dv-ico ico-refresh-white refresh-folders-button" tip-res="RefreshFoldersTree" />
+      <!-- Кнопка для закрепления панели-->
+      <LayoutIconButton Name="pinToggleMenuButton" IconClass="dv-ico ico-unpinn" />
+    </RightMainMenuItemPanel>
+
+    <!-- Папка Главное -->
+    <LinkMainMenuItem Name="dashboard" Href="#/Dashboard" Configurable-bool="false" Text-res="Navigator_Dashboard" IconClass="dv-ico ico-home" />
+
+    <!-- Для папок внутри контейнера пользователю разрешено отключение папок -->
+    <ConfigurableMainMenuContainer Name="configurable">
+      <!-- Папка результатов полнотекстового поиска -->
+      <SearchResultsMainMenuItem />
+
+      <!-- Папка Последние карточки -->
+      <LinkMainMenuItem Href="#/Folder/RecentCards" Compact-bool="true" TextResourceKey="Folder_RecentCards" IconClass="dv-ico dv-ico-history" />
+
+      <!-- Группа Мои группы -->
+      <GroupMainMenuItem Text-res="MainMenu_MyGroups">
+        <!-- Групповые и ролевые папки пользователя. Показывать сразу подпапки, не показывать иконки папок -->
+        <GroupFoldersMainMenuItem  ShowRoot-bool="false" ShowChildrenIcons-bool="false" />
+      </GroupMainMenuItem>
+
+      <!-- Папки, присоединенные пользователем. Показывать иконки папок. -->
+      <UserFoldersMainMenuItem Name="userFolders" Text-res="MainMenu_MyFolders" />
+    </ConfigurableMainMenuContainer>
+  </MainMenu>
+  <!-- Обязательная часть, в которой подключаются сервисные клиентские скрипты дерева папок -->
+  <ConnectPinButtonToMainMenuScript MainMenuName="appMainMenu" PinButtonName="pinToggleMenuButton" />
+  <ConnectUserFoldersButtonScript UserFoldersName="userFolders" ConfigurationButtonName="configurationButton" />
+  <ConnectUserFoldersToConfigurableContainerScript UserFoldersName="userFolders" ConfigurableContainerName="configurable" />
+  <ConnectConfigurableMainMenuContainerButtonScript ConfigurableContainerName="configurable" ButtonName="configurationButton" />
+  <RefreshFoldersTreeScript  refreshButtonName="refreshFoldersTreeButton" />
+</Layout>
