@@ -4,14 +4,16 @@
 
     <!-- Сервисные кнопки в папке Главное -->
     <RightMainMenuItemPanel >
-      <!-- Кнопка для закрепления панели-->
-      <LayoutIconButton Name="pinToggleMenuButton" IconClass="dv-ico ico-unpinn" />
+     
       <!-- Кнопка для настройки дерева папок-->
       <ConfigurableMainMenuContainerButton Name="configurationButton" />
+      <RefreshFoldersTreeButton Name="refreshFoldersTreeButton" IconClass="dv-ico ico-refresh-white refresh-folders-button" tip-res="RefreshFoldersTree" />
+      <!-- Кнопка для закрепления панели-->
+      <LayoutIconButton Name="pinToggleMenuButton" IconClass="dv-ico ico-unpinn" />
     </RightMainMenuItemPanel>
 
     <!-- Папка Главное -->
-    <LinkMainMenuItem Name="dashboard" Href="#/Dashboard" Configurable="false" Header="Dashboard" TextResourceKey="Navigator_Dashboard" IconClass="dv-ico ico-home" />
+    <LinkMainMenuItem Name="dashboard" Href="#/Dashboard" Configurable-bool="false" Text-res="Navigator_Dashboard" IconClass="dv-ico ico-home" />
 
     <!-- Для папок внутри контейнера пользователю разрешено отключение папок -->
     <ConfigurableMainMenuContainer Name="configurable">
@@ -19,32 +21,32 @@
       <SearchResultsMainMenuItem />
 
       <!-- Папка Последние карточки -->
-      <LinkMainMenuItem Href="#/Folder/RecentCards" Compact="true" TextResourceKey="Folder_RecentCards" IconClass="dv-ico dv-ico-history" />
+      <LinkMainMenuItem Href="#/Folder/RecentCards" Compact-bool="true" TextResourceKey="Folder_RecentCards" IconClass="dv-ico dv-ico-history" />
 
       <!-- Стандартные папки маршрутизации УД - Мои задания. Показывать сразу развернутые подпапки, не показывать иконки папок -->
-      <GroupMainMenuItem Text="МОИ ЗАДАНИЯ" isExpanded="true" expandChildrenLevel="3">
-        <FolderMainMenuItem FolderId="8DF9FBB0-8325-4E6E-A29B-9C5064EF8502" Color="Tasks" ShowRoot="false" 
-                            SubfoldersPreloadLevel="2" ShowChildrenIcons="false" ForceVirtualFolderSearch="true" />
+      <GroupMainMenuItem Text-res="MainMenu_Tasks" isExpanded-bool="true" expandChildrenLevel-int="3">
+        <FolderMainMenuItem FolderId="8DF9FBB0-8325-4E6E-A29B-9C5064EF8502" Color="Tasks" ShowRoot-bool="false"
+                            SubfoldersPreloadLevel-int="2" ShowChildrenIcons-bool="false" ForceVirtualFolderSearch-bool="true" />
       </GroupMainMenuItem>
 
       <!-- Стандартные папки маршрутизации УД - Мои документы. Показывать сразу подпапки, не показывать иконки папок -->
-      <GroupMainMenuItem Text="МОИ ДОКУМЕНТЫ" isExpanded="false" >
-        <FolderMainMenuItem FolderId="30292A62-E596-4FE0-A901-19EE81124DC1" Color="Documents" ShowRoot="false" ShowChildrenIcons="false" />
+      <GroupMainMenuItem Text-res="MainMenu_Documents" isExpanded-bool="false" >
+        <FolderMainMenuItem FolderId="30292A62-E596-4FE0-A901-19EE81124DC1" Color="Documents" ShowRoot-bool="false" ShowChildrenIcons-bool="false" />
       </GroupMainMenuItem>
 
       <!-- Стандартные папки маршрутизации УД - Замещение. Показывать сразу подпапки, не показывать иконки папок -->
-      <GroupMainMenuItem Text="ЗАМЕЩЕНИЕ" isExpanded="false" >
-        <FolderMainMenuItem FolderId="7034106E-E76D-4611-BD98-7B0BA42B8DB4" Color="Tasks" ShowRoot="false" ShowChildrenIcons="false" />
+      <GroupMainMenuItem Text-res="MainMenu_Substitution" isExpanded-bool="false" >
+        <FolderMainMenuItem FolderId="7034106E-E76D-4611-BD98-7B0BA42B8DB4" Color="Tasks" ShowRoot-bool="false" ShowChildrenIcons-bool="false" />
       </GroupMainMenuItem>
 
       <!-- Группа Мои группы -->
-      <GroupMainMenuItem Text="МОИ ГРУППЫ">
+      <GroupMainMenuItem Text-res="MainMenu_MyGroups">
         <!-- Групповые и ролевые папки пользователя. Показывать сразу подпапки, не показывать иконки папок -->
-        <GroupFoldersMainMenuItem  ShowRoot="false" ShowChildrenIcons="false" />
+        <GroupFoldersMainMenuItem  ShowRoot-bool="false" ShowChildrenIcons-bool="false" />
       </GroupMainMenuItem>
 
       <!-- Папки, присоединенные пользователем. Показывать иконки папок. -->
-      <UserFoldersMainMenuItem Name="userFolders" Text="МОИ ПАПКИ" />
+      <UserFoldersMainMenuItem Name="userFolders" Text-res="MainMenu_MyFolders" />
     </ConfigurableMainMenuContainer>
   </MainMenu>
   <!-- Обязательная часть, в которой подключаются сервисные клиентские скрипты дерева папок -->
@@ -52,4 +54,5 @@
   <ConnectUserFoldersButtonScript UserFoldersName="userFolders" ConfigurationButtonName="configurationButton" />
   <ConnectUserFoldersToConfigurableContainerScript UserFoldersName="userFolders" ConfigurableContainerName="configurable" />
   <ConnectConfigurableMainMenuContainerButtonScript ConfigurableContainerName="configurable" ButtonName="configurationButton" />
+  <RefreshFoldersTreeScript  refreshButtonName="refreshFoldersTreeButton" />
 </Layout>

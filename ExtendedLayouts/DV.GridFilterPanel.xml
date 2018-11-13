@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Layout>
+  <GridFilterResetButton Name="gridFilterResetButton" />
+  <GridFilterItems Name="gridFilterItems" />
+</Layout>
