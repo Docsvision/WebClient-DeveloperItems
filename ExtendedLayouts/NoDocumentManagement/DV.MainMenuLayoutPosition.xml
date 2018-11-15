@@ -23,22 +23,6 @@
       <!-- Папка Последние карточки -->
       <LinkMainMenuItem Href="#/Folder/RecentCards" Compact-bool="true" TextResourceKey="Folder_RecentCards" IconClass="dv-ico dv-ico-history" />
 
-      <!-- Стандартные папки маршрутизации УД - Мои задания. Показывать сразу развернутые подпапки, не показывать иконки папок -->
-      <GroupMainMenuItem Text-res="MainMenu_Tasks" isExpanded-bool="true" expandChildrenLevel-int="3">
-        <FolderMainMenuItem FolderId="8DF9FBB0-8325-4E6E-A29B-9C5064EF8502" Color="Tasks" ShowRoot-bool="false"
-                            SubfoldersPreloadLevel-int="2" ShowChildrenIcons-bool="false" ForceVirtualFolderSearch-bool="true" />
-      </GroupMainMenuItem>
-
-      <!-- Стандартные папки маршрутизации УД - Мои документы. Показывать сразу подпапки, не показывать иконки папок -->
-      <GroupMainMenuItem Text-res="MainMenu_Documents" isExpanded-bool="false" >
-        <FolderMainMenuItem FolderId="30292A62-E596-4FE0-A901-19EE81124DC1" Color="Documents" ShowRoot-bool="false" ShowChildrenIcons-bool="false" />
-      </GroupMainMenuItem>
-
-      <!-- Стандартные папки маршрутизации УД - Замещение. Показывать сразу подпапки, не показывать иконки папок -->
-      <GroupMainMenuItem Text-res="MainMenu_Substitution" isExpanded-bool="false" >
-        <FolderMainMenuItem FolderId="7034106E-E76D-4611-BD98-7B0BA42B8DB4" Color="Tasks" ShowRoot-bool="false" ShowChildrenIcons-bool="false" />
-      </GroupMainMenuItem>
-
       <!-- Группа Мои группы -->
       <GroupMainMenuItem Text-res="MainMenu_MyGroups">
         <!-- Групповые и ролевые папки пользователя. Показывать сразу подпапки, не показывать иконки папок -->

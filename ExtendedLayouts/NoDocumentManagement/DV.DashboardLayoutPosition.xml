@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Layout>
+  <DashboardContainer>
+    <!-- Виджет Последние карточки -->
+    <Block Name="recentCardsBlock">
+      <RecentCardsDashboardWidget Name="recentCardsWidget" Header-res="Navigator_RecentCards" />
+    </Block>
+  </DashboardContainer>
+</Layout>

@@ -1,4 +1,4 @@
-# Примеры расширенных разметок Docsvision 5 Web-клиент
+# Примеры расширенных разметок Docsvision 5 Web-клиент без установленного модуля Document management
 
 Подробности о каждом элементе управления расширенных разметок можно уточить в [документации](https://docsvision.github.io/WebClient-JsDocApi/globals.html)
  
